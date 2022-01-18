@@ -2,7 +2,41 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+
+export const nonConstructibleChange = coins => {
+  // sort array
+  coins = coins.sort((c1,c2) => c1 - c2)
+
+  // define minimum amount of change available
+  let minimumChange = 0;
+  let change;
+  
+  for(let coin of coins) {
+    // if next coin is greater than the previous minimum change
+    change = minimumChange + 1
+    if( coin > change)
+      return change
+
+    minimumChange = minimumChange + coin
+    change = change + coin
+  }
+
+  return change;
+}
+
+export const sortedSquaredArray = array => {
+  if(!array.length)
+    return 0
+  
+  // replace elements with its squared vaule
+  array = array.map(element => element*element)
+
+  // sort the new array and return it
+  return array.sort((el1,el2) => el1 - el2)
+}
+
+export function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,6 +49,9 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+
+        
 
         <p className={styles.description}>
           Get started by editing{' '}
