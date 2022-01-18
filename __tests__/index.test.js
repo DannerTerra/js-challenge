@@ -6,9 +6,9 @@ describe('Home', () => {
         render(<Home />)
         
     })
-  })
+})
 
-  describe('Non-Constructible Change', () => {
+describe('Non-Constructible Change', () => {
     const coinsArray = [
         {"coins": [5, 7, 1, 1, 2, 3, 22]},
         {"coins": [1, 1, 1, 1, 1]},
@@ -26,9 +26,9 @@ describe('Home', () => {
     it(`should calculate minimum not available change for [${coinsArray[2].coins}]`, () => {
         expect( nonConstructibleChange(coinsArray[2].coins)).toEqual(55)
     })
-  })
+})
 
-  describe('Sorted Squared Array', () => {
+describe('Sorted Squared Array', () => {
     const arrays = [
         {"array": [1, 2, 3, 5, 6, 8, 9]},
         {"array": [-2, -1]},
@@ -46,4 +46,4 @@ describe('Home', () => {
     it(`should calculate minimum not available change for [${arrays[2].array}]`, () => {
         expect( sortedSquaredArray(arrays[2].array)).toEqual([0, 25, 25, 100, 100])
     })
-  })
+})

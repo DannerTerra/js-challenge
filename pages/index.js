@@ -12,7 +12,7 @@ export const nonConstructibleChange = coins => {
   let change;
   
   for(let coin of coins) {
-    // if next coin is greater than the previous minimum change
+    // next coin is greater than the previous minimum change +1
     change = minimumChange + 1
     if( coin > change)
       return change
@@ -27,8 +27,8 @@ export const nonConstructibleChange = coins => {
 export const sortedSquaredArray = array => {
   if(!array.length)
     return 0
-  
-  // replace elements with its squared vaule
+
+  // replace elements with its squared value
   array = array.map(element => element*element)
 
   // sort the new array and return it
